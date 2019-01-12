@@ -13,19 +13,19 @@
         1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0,
         1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0,
         1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0,
-        1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0];
+        1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1];
 
     size = 32;
 
-    buffer.canvas.width = 16 * size;
+    buffer.canvas.width = 9 * size;
     buffer.canvas.height = 9 * size;
 
     drawMap = function () {
 
         for (let index = 0; index < map.length; index++) {
 
-            buffer.fillStyle = (map[index] == 1) ? "#000000" : "#ffffff";
-            buffer.fillRect((index % 16) * size, Math.floor(index / 16) * size, size, size);
+            buffer.fillStyle = (map[index] == 1) ? "#E0E0E0" : "#737171";
+            buffer.fillRect((index % 9) * size, Math.floor(index / 9) * size, size, size);
 
         }
 
