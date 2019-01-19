@@ -1,5 +1,51 @@
-var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d");
+
+class Stage {
+    constructor(){
+        this.tileSize = 45;
+        this.map = [
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],  
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],  
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],  
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],  
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],  
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],  
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],  
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],    
+            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]   
+        ];
+    }
+    draw(ctx) {
+        this.map.forEach((row, y) => {
+        row.forEach((id, x) => {
+            let xpos = x * this.tileSize;
+            let ypos = y * this.tileSize;
+            ctx.save();
+            ctx.beginPath();
+            ctx.strokeRect(xpos, ypos, this.tileSize, this.tileSize);
+            ctx.fillStyle = id ? "white" : "grey";
+            ctx.fillRect(xpos, ypos, this.tileSize, this.tileSize);
+            ctx.stroke();
+            ctx.restore();
+
+        });
+        });
+    }
+}
+
+
+class App {
+    constructor() {
+        console.log("Canvas Tiles");
+        let canvas = document.createElement("canvas");
+        let stage = new Stage();
+        canvas.width = stage.tileSize * stage.map[0].length;
+        canvas.height = stage.tileSize * stage.map.length;
+        document.body.appendChild(canvas);
+        let ctx = canvas.getContext("2d");
+        stage.draw(ctx);
+    }
+}
+new App();
 
 function Player(name, score, player, weapon, damage) {
     this.name = name;
