@@ -1,17 +1,17 @@
 
 class Stage {
     constructor(){
-        this.tileSize = 45;
+        this.tileSize = 37;
         this.map = [
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],  
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],  
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],  
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],  
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],  
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],  
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],  
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],    
-            [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]   
+                    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],  
+                    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],  
+                    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],  
+                    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],  
+                    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],  
+                    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],  
+                    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],  
+                    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],    
+                    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]   
         ];
     }
     draw(ctx) {
@@ -47,12 +47,11 @@ class App {
 }
 new App();
 
-function Player(name, score, player, weapon, damage) {
+function Player(name, score, damage, weapon) {
     this.name = name;
     this.score = score;
-    this.player = player;
-    this.weapon = weapon;
     this.damage = damage;
+    this.weapon = weapon;
 }
 
 Player.prototype.add = function () {
@@ -68,8 +67,8 @@ function State(active, notActive, attack, win, dead) {
 }
 
 //Creates the players
-let player1 = new Player('Batman', 100, 'player1', '', 0);
-let player2 = new Player('Joker', 100, 'player2', '', 0);
+let player1 = new Player('Batman', 100, 'player1', 0, "");
+let player2 = new Player('Joker', 100, 'player2', 0, "");
 let player1State = new State('src/batman.jpg');
 let player2State = new State('src/joker.jpg');
 

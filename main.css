@@ -1,5 +1,4 @@
 
-
 html {
   height:100%;
   width:100%;
@@ -7,25 +6,46 @@ html {
 }
 
 body {
+  background-color: #131414!important;
   padding: 0%;
-  background-image: url(images/cover1.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
   align-content:space-around;
   display:grid;
   grid-template-columns:auto;
   grid-template-rows:auto auto;
   justify-items:center;
   min-height:100%;
-  width:90%;
-
+  width:90%
 }
 
-canvas {
 
-box-sizing:border-box;
-  margin:30px;
-  padding:10px;
-  background-color:#000000;
-  
+.player-0-panel{
+    text-align: center;
+    width: 25%;
+    position: absolute;
+    top: 0%;
+    float: left;
+    height: 632px;
+    font-size: 30px;
+    left: 0%;
+    color: whitesmoke;
+    background-image: url(images/cover8.jpg);
+    background-size: cover;
+    background-position: center;
+    font-weight: bold;
+}
+
+.player-1-panel{
+    text-align: center;
+    width: 30%;
+    position: absolute;
+    top: 0%;
+    float: right;
+    right: 0%;
+    height: 632px;
+    font-size: 30px;
+    color: whitesmoke;
+    background-image: url(images/cover2.jpg);
+    background-size: cover;
+    background-position: center;
+    font-weight: bold;
 }
