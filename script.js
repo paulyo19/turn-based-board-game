@@ -47,28 +47,63 @@ class App {
 }
 new App();
 
-function Player(name, score, damage, weapon) {
+
+var Player = {
+init: function (name, score, weapon, damage) {
     this.name = name;
     this.score = score;
-    this.damage = damage;
     this.weapon = weapon;
+    this.damage = damage;
 }
-
-Player.prototype.add = function () {
-    addItem(this.player);
 };
 
-function State(active, notActive, attack, win, dead) {
-    this.active = active;
-    this.notActive = notActive;
-    this.attack = attack;
-    this.win = win;
-    this.dead = dead;
-}
 
-//Creates the players
-let player1 = new Player('Batman', 100, 'player1', 0, "");
-let player2 = new Player('Joker', 100, 'player2', 0, "");
-let player1State = new State('src/batman.jpg');
-let player2State = new State('src/joker.jpg');
+var player1 = Object.create(Player);
+player1.init("batman", 100, "rifle", 10);
+
+var player2 = Object.create(Player);
+player2.init("joker", 100, "rifle", 10);
+
+// console.log(player1);
+// console.log(player2);
+
+var Weapons = {
+init: function (type, value) {
+    this.type = type;
+    this.value = value;
+ }
+};
+
+
+var rifle = Object.create(Weapons);
+rifle.init("rifle", 10);
+
+var laser = Object.create(Weapons);
+laser.init("laser", 20);
+
+var gatling = Object.create(Weapons);
+gatling.init("gatling", 30);
+
+var tank = Object.create(Weapons);
+tank.init("tank", 40);
+
+var apache = Object.create(Weapons);
+apache.init("apache", 50);
+
+// console.log(rifle);
+// console.log(laser);
+// console.log(gatling);
+// console.log(tank);
+// console.log(apache);
+
+
+
+
+
+
+
+
+
+
+
 
